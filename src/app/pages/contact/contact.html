@@ -17,23 +17,8 @@
             <div class="contact-grid">
                 <div class="contact-form-container">
                     <div class="contact-form-card">
-                        @if (!formSubmitted)
-                        {
                         <h2>Send Us a Message</h2>
-                        <form name="contact" method="POST" netlify netlify-honeypot="bot-field"
-                            [formGroup]="contactForm" (ngSubmit)="onSubmit($event)">
-
-                            <!-- Netlify form detection -->
-                            <input type="hidden" name="form-name" value="contact" />
-                            <input type="hidden" name="subject" value="New Contact Form Submission" />
-
-                            <!-- Honeypot -->
-                            <p style="display:none;">
-                                <label>Don’t fill this out if you’re human:
-                                    <input type="text" name="bot-field" formControlName="botField" />
-                                </label>
-                            </p>
-
+                        <form name="contact" [formGroup]="contactForm" (ngSubmit)="onSubmit($event)" action="https://usebasin.com/f/24c28e07359e" method="POST" enctype="multipart/form-data">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="firstName">
@@ -98,19 +83,6 @@
                                 </svg>
                             </button>
                         </form>
-                        }
-                        @else
-                        {
-                        <div class="success-message" role="status" aria-live="polite">
-                            <h4>🚗 Message Sent! 🚗</h4>
-                            <p>Thank you for reaching out! We’ve received your message and will get back to you as soon
-                                as possible.</p>
-                            <p>In the meantime, feel free to explore our <a routerLink="/services"
-                                    class="success-link">services</a> or
-                                <a routerLink="/about" class="success-link">about</a> pages.
-                            </p>
-                        </div>
-                        }
                     </div>
                 </div>
 
