@@ -74,7 +74,10 @@
                                     class="form-textarea"></textarea>
                             </div>
 
-                            <button type="submit" class="submit-button" [disabled]="contactForm.invalid">
+                            <div class="cf-turnstile" data-sitekey="0x4AAAAAADBYvtAbx5FgA50a" data-callback="turnstileFinished" data-theme="light">
+                            </div>
+
+                            <button type="submit" class="submit-button" [disabled]="!isFormValid">
                                 Send Message
                                 <svg class="send-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2">
